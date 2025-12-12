@@ -1,20 +1,22 @@
 # Tomato-Leaf-Diseases-Image-Classification-Using-Deep-Learning
 ---
 
-## **PROBLEM:** 
-Plant disease identification for smallholder farmers using computer vision and deep learning. [1](#0-0)  The system aims to enable smartphones with HD cameras to identify plant diseases efficiently, replacing traditional approaches that require visiting local plant clinics. [2](#0-1) 
+## **Problem:** 
+Plant disease identification for smallholder farmers using computer vision and deep learning. 
 
 ## **INPUT:**
-- **Data:** Raw images of tomato leaves (resized to 150×150 pixels) [3](#0-2) 
-- **Dataset Source:** 9,000 images extracted from the PlantVillage dataset [4](#0-3) 
-- **Classes:** 6 categories total:
+- **Data:** Raw images of tomato leaves (resized to 150×150 pixels) 
+- **Dataset Source:** 9,000 images extracted from the PlantVillage dataset
+- **Classes:** 6 categories:
   - Bacterial Spot
   - Early Blight
   - Healthy leaves
   - Septorial Leaf Spot
   - Leaf Mold
-  - Yellow Leaf Curl Virus [5](#0-4) 
-- **Image Format:** Two approaches tested - full-color (3 channels) and grayscale (1 channel) [6](#0-5) 
+  - Yellow Leaf Curl Virus
+- **Image Format:** Two approaches tested:
+   - full-color (3 channels) 
+   - grayscale (1 channel)
 
 ## **OUTPUT:**
 - **Model Architecture:** CNN-based deep learning model with 4 convolutional layers (with ReLU activation) followed by max pooling layers, and 2 dense layers with Softmax output [7](#0-6) 
