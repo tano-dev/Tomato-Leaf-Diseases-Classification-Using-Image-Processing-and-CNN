@@ -1,60 +1,35 @@
 # Tomato-Leaf-Diseases-Image-Classification-Using-Deep-Learning
 ---
-## 🍅 Bài Toán: Nhận Dạng và Phân Loại Bệnh Trên Lá Cây Cà Chua
 
-Sử dụng các phương pháp **Xử lý Ảnh** và mô hình **Deep Learning** để tự động nhận diện và phân loại các bệnh trên lá cây cà chua.
+## **PROBLEM:** 
+Plant disease identification for smallholder farmers using computer vision and deep learning. [1](#0-0)  The system aims to enable smartphones with HD cameras to identify plant diseases efficiently, replacing traditional approaches that require visiting local plant clinics. [2](#0-1) 
 
----
+## **INPUT:**
+- **Data:** Raw images of tomato leaves (resized to 150×150 pixels) [3](#0-2) 
+- **Dataset Source:** 9,000 images extracted from the PlantVillage dataset [4](#0-3) 
+- **Classes:** 6 categories total:
+  - Bacterial Spot
+  - Early Blight
+  - Healthy leaves
+  - Septorial Leaf Spot
+  - Leaf Mold
+  - Yellow Leaf Curl Virus [5](#0-4) 
+- **Image Format:** Two approaches tested - full-color (3 channels) and grayscale (1 channel) [6](#0-5) 
 
-### 📥 INPUT (Dữ Liệu Đầu Vào)
-
-| Thuộc Tính | Mô Tả Chi Tiết |
-| :--- | :--- |
-| **Dữ Liệu** | Hình ảnh của lá cà chua. |
-| **Định Dạng** | .jpg, .png. |
-| **Kích Thước Xử Lý** | Ảnh được **resize về $128 \times 128$ pixels**. *(Mục đích: Tối ưu tốc độ tính toán, vẫn giữ các đặc trưng quan trọng).* |
-| **Dataset (Bộ Dữ Liệu)** | Hình ảnh từ bộ dữ liệu **PlantVillage (Tomato)**. |
-| **Số Lượng Lớp** | **6 Lớp** (6 loại lá khác nhau) - *(Đây là bài toán phân loại đa lớp/Multi-Class Classification).* |
-
-#### 🌿 Các Lớp Phân Loại (6 Loại Lá)
-
-| STT | Tên Bệnh (Tiếng Anh) | Tên Bệnh (Tiếng Việt) |
-| :--- | :--- | :--- |
-| 1 | Bacterial Spot | Đốm vi khuẩn |
-| 2 | Early Blight | Bệnh đốm sớm |
-| 3 | Healthy | Lá khỏe mạnh |
-| 4 | Septorial Leaf Spot | Đốm lá Septoria |
-| 5 | Leaf Mold | Nấm mốc lá |
-| 6 | Yellow Leaf Curl Virus | Virus xoăn vàng lá |
+## **OUTPUT:**
+- **Model Architecture:** CNN-based deep learning model with 4 convolutional layers (with ReLU activation) followed by max pooling layers, and 2 dense layers with Softmax output [7](#0-6) 
+- **Classification Results:** 
+  - Full-Color Model: **99.84% accuracy** on held-out test set [8](#0-7) 
+  - Grayscale Model: **95.54% accuracy** on held-out test set [8](#0-7) 
+- **Disease Identification:** The model predicts one of 6 classes for each input image
+- **Visualization:** Feature maps showing intermediate activations demonstrate that the full-color model learned to identify disease spots, while the grayscale model primarily learned leaf shape and background patterns [9](#0-8) 
+- **Deployment Target:** Smartphone application for field use by farmers [10](#0-9) 
 
 ---
 
-### ⚙️ Phương Pháp/Mô Hình Đề Xuất
+## **Notes:**
+This repository demonstrates a completely different use case from your example (plant disease detection vs. test grading). The project uses state-of-the-art deep learning techniques to create a practical tool for agricultural disease management, particularly aimed at helping smallholder farmers who depend on healthy crops for survival. [11](#0-10)
 
-* **Lĩnh vực chính:** Computer Vision, Deep Learning.
-* **Mô hình phổ biến:** Convolutional Neural Networks (CNN) như **VGG**, **ResNet**, **MobileNet**, hoặc một kiến trúc CNN tùy chỉnh *(Custom CNN Architecture)*. 
 
-[Image of Convolutional Neural Network architecture]
 
-* **Kỹ thuật Xử lý Ảnh:** Tiền xử lý (Preprocessing) bao gồm **Resize**, **Chuẩn hóa (Normalization)**, và **Tăng cường dữ liệu (Data Augmentation)** để cải thiện hiệu suất mô hình.
 
----
-
-### 📤 OUTPUT (Kết Quả Đầu Ra)
-
-* **Phân loại bệnh:** Mô hình Deep Learning sẽ đưa ra dự đoán về loại lá cà chua, chỉ rõ:
-    * Lá thuộc loại bệnh nào trong 5 loại bệnh trên.
-    * Hoặc Lá **khỏe mạnh (Healthy)**.
-
----
-
-### 📈 Đánh Giá (Metrics)
-
-* Các chỉ số quan trọng để đánh giá hiệu suất mô hình:
-    * **Accuracy** (Độ chính xác tổng thể).
-    * **Precision, Recall, F1-Score** (cho từng lớp và trung bình).
-    * **Confusion Matrix** (Ma trận nhầm lẫn).
-
----
-
-Bạn có muốn tôi đi sâu hơn vào **kiến trúc mô hình CNN** nào sẽ phù hợp nhất cho bài toán này, hay muốn tìm hiểu về các bước **tiền xử lý ảnh** cụ thể?
