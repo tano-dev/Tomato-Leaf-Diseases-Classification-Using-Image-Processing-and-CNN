@@ -4,3 +4,5 @@ def print_hello_five_times():
     for _ in range(5):
         print("Hello")
 print_hello_five_times()
+
+print("End of a.py")
